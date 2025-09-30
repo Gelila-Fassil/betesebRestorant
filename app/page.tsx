@@ -10,6 +10,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams"
 import { Lens } from "@/components/ui/lens"
 import { ExpandableCardDemo } from "@/components/ui/expandable-card"
 import { RotatingCircularMenu } from "@/components/ui/rotating-circular-menu"
+import { RotatingHero } from "@/components/ui/rotating-hero"
 import {
   MapPin,
   Phone,
@@ -554,11 +555,8 @@ export default function HomePage() {
         </div>
       </motion.nav>
 
-      <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-        <FloatingDock items={dockItems} />
-      </div>
 
-      <AdvancedHeroSection />
+      <RotatingHero />
 
       <motion.section
         className="py-20 bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground relative overflow-hidden"
