@@ -1006,6 +1006,7 @@ export default function HomePage() {
           </motion.div>
         </div>
       </motion.footer>
+      <h1>hey</h1>
     </div>
   )
 }
