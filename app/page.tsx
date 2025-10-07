@@ -514,29 +514,43 @@ export default function HomePage() {
     <div className="min-h-screen bg-background relative overflow-hidden">
       <AdvancedFloatingParticles />
 
-      <motion.nav
-        className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 px-8 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl"
+      {/* Logo - Clean Design */}
+      <motion.div
+        className="fixed top-2 left-12 z-50"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <div className="flex items-center space-x-16">
-          <motion.div className="flex items-center" whileHover={{ scale: 1.05 }}>
-            <motion.h1
-              className="text-3xl font-bold text-white font-serif drop-shadow-lg"
+        <motion.div className="flex items-center" whileHover={{ scale: 1.05 }}>
+            <motion.img
+              src="/logo.png"
+              alt="Beteseb Restaurant Logo"
+              className="h-28 w-auto drop-shadow-2xl object-contain brightness-125 contrast-125 saturate-110"
               whileHover={{
-                textShadow: "0 0 20px rgba(79, 98, 56, 0.8)",
+                filter: "drop-shadow(0 0 50px rgba(79, 98, 56, 1)) brightness(1.3) contrast(1.3) saturate(1.2)",
+                scale: 1.2,
               }}
-            >
-              Beteseb
-            </motion.h1>
-          </motion.div>
-          <div className="hidden md:flex items-center space-x-8">
-            {["Home", "About", "Menu", "Contact"].map((item, index) => (
+              onError={(e) => {
+                console.log('Logo image failed to load:', e);
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+        </motion.div>
+      </motion.div>
+
+      {/* Navigation Menu */}
+      <motion.nav
+        className="fixed top-10 left-1/2 transform -translate-x-1/2 z-50 px-12 py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+      >
+        <div className="flex items-center space-x-12">
+            {["Home", "Menu", "Order", "About", "Contact"].map((item, index) => (
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-white hover:text-primary-foreground transition-colors relative font-medium text-lg drop-shadow-md"
+                className="text-white hover:text-primary-foreground transition-colors relative font-medium text-base drop-shadow-md"
                 whileHover={{ scale: 1.1, y: -3 }}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -551,7 +565,6 @@ export default function HomePage() {
                 />
               </motion.a>
             ))}
-          </div>
         </div>
       </motion.nav>
 
@@ -887,7 +900,6 @@ export default function HomePage() {
                 className="absolute top-6 right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg"
                 initial={{ opacity: 0, scale: 0, rotate: -10 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 1, type: "spring" }}
                 viewport={{ once: true }}
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
@@ -1006,7 +1018,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </motion.footer>
-      <h1>hey</h1>
     </div>
   )
 }
