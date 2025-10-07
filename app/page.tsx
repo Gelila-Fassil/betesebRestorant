@@ -313,7 +313,7 @@ const AdvancedHeroSection = () => {
           style={{ opacity: heroOpacity }}
         />
         <motion.div
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(79,98,56,0.3)_0%,transparent_50%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(15,118,59,0.3)_0%,transparent_50%)]"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.6, 0.3],
@@ -366,7 +366,7 @@ const AdvancedHeroSection = () => {
           <motion.h1
             className="text-6xl md:text-8xl lg:text-[10rem] font-bold mb-8 hero-text font-serif text-balance leading-none"
             style={{
-              background: "linear-gradient(45deg, #ffffff, #EFE3D7, #4F6238, #ffffff)",
+              background: "linear-gradient(45deg, #ffffff, #F8931B, #0f763b, #ffffff)",
               backgroundSize: "300% 300%",
               backgroundClip: "text",
               WebkitBackgroundClip: "text",
@@ -382,7 +382,7 @@ const AdvancedHeroSection = () => {
             }}
             whileHover={{
               scale: 1.05,
-              textShadow: "0 0 30px rgba(79, 98, 56, 0.8)",
+              textShadow: "0 0 30px rgba(15, 118, 59, 0.8)",
             }}
           >
             BETESEB
@@ -423,7 +423,7 @@ const AdvancedHeroSection = () => {
         <motion.div
           whileHover={{
             scale: 1.15,
-            boxShadow: "0 25px 50px rgba(79, 98, 56, 0.6)",
+              boxShadow: "0 25px 50px rgba(15, 118, 59, 0.6)",
             y: -8,
           }}
           whileTap={{ scale: 0.95 }}
@@ -457,7 +457,7 @@ const AdvancedHeroSection = () => {
             className="text-xl px-12 py-6 bg-white/10 border-white/40 text-white hover:bg-white/20 rounded-full backdrop-blur-md relative overflow-hidden"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-400/30 to-transparent"
               animate={{ x: ["-100%", "100%"] }}
               transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatDelay: 4, delay: 1 }}
             />
@@ -488,7 +488,7 @@ const AdvancedHeroSection = () => {
           </motion.span>
           <motion.div
             className="w-10 h-16 border-2 border-white/60 rounded-full flex justify-center relative overflow-hidden backdrop-blur-sm"
-            whileHover={{ scale: 1.2, borderColor: "rgba(79, 98, 56, 0.8)" }}
+            whileHover={{ scale: 1.2, borderColor: "rgba(15, 118, 59, 0.8)" }}
           >
             <motion.div
               className="w-2 h-6 bg-gradient-to-b from-white to-primary rounded-full mt-3"
@@ -521,7 +521,7 @@ export default function HomePage() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.div className="flex items-center" whileHover={{ scale: 1.05 }}>
+          <motion.div className="flex items-center" whileHover={{ scale: 1.05 }}>
             <motion.img
               src="/logo.png"
               alt="Beteseb Restaurant Logo"
@@ -535,7 +535,7 @@ export default function HomePage() {
                 e.currentTarget.style.display = 'none';
               }}
             />
-        </motion.div>
+          </motion.div>
       </motion.div>
 
       {/* Navigation Menu */}
@@ -572,7 +572,7 @@ export default function HomePage() {
       <RotatingHero />
 
       <motion.section
-        className="py-20 bg-gradient-to-br from-primary via-primary/90 to-primary/80 text-primary-foreground relative overflow-hidden"
+        className="py-20 bg-gradient-to-br from-[#0f763b] via-[#0f763b]/90 to-[#0f763b]/80 text-white relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -625,12 +625,12 @@ export default function HomePage() {
       <section id="about" className="py-32 bg-gradient-to-br from-background via-secondary/10 to-background relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(79,98,56,0.1)_0%,transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(79,98,56,0.08)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(15,118,59,0.1)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(248,147,27,0.08)_0%,transparent_50%)]" />
           {Array.from({ length: 20 }).map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-primary/20 rounded-full"
+              className="absolute w-1 h-1 bg-[#0f763b]/20 rounded-full"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -652,13 +652,13 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}
-          <motion.div
+            <motion.div
             className="text-center mb-20"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
             <motion.div
               className="inline-block mb-6"
               initial={{ scale: 0, rotate: -180 }}
@@ -666,27 +666,27 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.2, type: "spring" }}
               viewport={{ once: true }}
             >
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-2xl">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#0f763b] to-[#0f763b]/60 flex items-center justify-center shadow-2xl">
                 <Heart className="w-10 h-10 text-white" />
               </div>
             </motion.div>
-            <motion.h2
+              <motion.h2
               className="text-6xl md:text-7xl font-bold mb-6 text-primary font-serif text-balance"
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              Our Story
-            </motion.h2>
-            <motion.div
-              className="w-32 h-1 bg-gradient-to-r from-primary via-primary/60 to-primary rounded-full mx-auto mb-8"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+              >
+                Our Story
+              </motion.h2>
+              <motion.div
+              className="w-32 h-1 bg-gradient-to-r from-[#0f763b] via-[#0f763b]/60 to-[#0f763b] rounded-full mx-auto mb-8"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
               transition={{ duration: 1.2, delay: 0.6 }}
-              viewport={{ once: true }}
-            />
-            <motion.p
+                viewport={{ once: true }}
+              />
+                <motion.p
               className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -723,29 +723,29 @@ export default function HomePage() {
               }
             ].map((story, index) => (
               <motion.div
-                key={index}
+                  key={index}
                 className="group relative"
                 initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: story.delay }}
-                viewport={{ once: true }}
+                  viewport={{ once: true }}
               >
-                <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:bg-white/10">
-                  <motion.div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${story.color} flex items-center justify-center mb-6 shadow-lg`}
+                  <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl shadow-2xl hover:shadow-[#0f763b]/20 transition-all duration-500 group-hover:scale-105 group-hover:bg-white/10">
+                    <motion.div
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${story.color} flex items-center justify-center mb-6 shadow-lg`}
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
                     <story.icon className="w-8 h-8 text-white" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-[#0f763b] transition-colors">
                     {story.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
                     {story.description}
                   </p>
-                  <motion.div
-                    className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    <motion.div
+                      className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0f763b]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     initial={{ scale: 0.8 }}
                     whileHover={{ scale: 1 }}
                   />
@@ -756,7 +756,7 @@ export default function HomePage() {
 
           {/* Main Story Content with Image */}
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div
+              <motion.div
               className="space-y-8"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -764,11 +764,11 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <motion.div
-                className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl border border-primary/20 backdrop-blur-sm"
+                className="p-8 bg-gradient-to-br from-[#0f763b]/10 to-[#0f763b]/5 rounded-3xl border border-[#0f763b]/20 backdrop-blur-sm"
                 whileHover={{ scale: 1.02, y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-3xl font-bold mb-6 text-primary">A Culinary Journey</h3>
+                <h3 className="text-3xl font-bold mb-6 text-[#0f763b]">A Culinary Journey</h3>
                 <p className="text-lg leading-relaxed text-foreground mb-6">
                   Beteseb Restaurant was born from a passion to share the authentic flavors of Ethiopia with our community. 
                   Every dish tells a story of tradition, family, and the rich culinary heritage of Ethiopia.
@@ -776,7 +776,7 @@ export default function HomePage() {
                 <div className="flex items-center space-x-4">
                   <div className="flex -space-x-2">
                     {[1, 2, 3].map((i) => (
-                      <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/60 border-2 border-white shadow-lg" />
+                      <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0f763b] to-[#0f763b]/60 border-2 border-white shadow-lg" />
                     ))}
                   </div>
                   <span className="text-sm text-muted-foreground">Join 1000+ happy customers</span>
@@ -791,13 +791,13 @@ export default function HomePage() {
                 viewport={{ once: true }}
               >
                 <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-                  <Button size="lg" className="rounded-full bg-gradient-to-r from-primary to-primary/80 shadow-lg">
+                  <Button size="lg" className="rounded-full bg-gradient-to-r from-[#0f763b] to-[#0f763b]/80 shadow-lg">
                     <Users className="w-5 h-5 mr-2" />
                     Meet Our Team
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-                  <Button size="lg" variant="outline" className="rounded-full border-2 hover:bg-primary/10">
+                  <Button size="lg" variant="outline" className="rounded-full border-2 hover:bg-[#F8931B]/10">
                     <Coffee className="w-5 h-5 mr-2" />
                     Coffee Ceremony
                   </Button>
@@ -814,7 +814,7 @@ export default function HomePage() {
             >
               <div className="relative">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl blur-xl"
+                  className="absolute inset-0 bg-gradient-to-br from-[#0f763b]/20 to-[#0f763b]/5 rounded-3xl blur-xl"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
                 />
@@ -864,15 +864,15 @@ export default function HomePage() {
       <section id="menu" className="py-32 relative overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(79,98,56,0.1)_0%,transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(79,98,56,0.08)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0f763b]/5 via-background to-[#F8931B]/10" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(15,118,59,0.1)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(248,147,27,0.08)_0%,transparent_50%)]" />
           
           {/* Floating Food Icons */}
           {Array.from({ length: 15 }).map((_, i) => (
             <motion.div
               key={i}
-              className="absolute text-primary/20"
+              className="absolute text-[#0f763b]/20"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -912,13 +912,13 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.2, type: "spring" }}
               viewport={{ once: true }}
             >
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-2xl">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#0f763b] to-[#0f763b]/60 flex items-center justify-center shadow-2xl">
                 <Utensils className="w-12 h-12 text-white" />
               </div>
             </motion.div>
             
             <motion.h2
-              className="text-6xl md:text-7xl font-bold mb-8 text-primary font-serif text-balance"
+              className="text-6xl md:text-7xl font-bold mb-8 text-[#0f763b] font-serif text-balance"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -928,7 +928,7 @@ export default function HomePage() {
             </motion.h2>
             
             <motion.div
-              className="w-40 h-1 bg-gradient-to-r from-primary via-primary/60 to-primary rounded-full mx-auto mb-8"
+              className="w-40 h-1 bg-gradient-to-r from-[#0f763b] via-[#0f763b]/60 to-[#0f763b] rounded-full mx-auto mb-8"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 1.2, delay: 0.6 }}
@@ -957,7 +957,7 @@ export default function HomePage() {
             {["All", "Main Dishes", "Vegetarian", "Beverages", "Desserts"].map((category, index) => (
               <motion.button
                 key={category}
-                className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-foreground hover:bg-primary hover:text-white transition-all duration-300"
+                className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-foreground hover:bg-[#0f763b] hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -1041,7 +1041,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: item.delay }}
                 viewport={{ once: true }}
               >
-                <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-2xl hover:shadow-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:bg-white/10">
+                <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-2xl hover:shadow-[#0f763b]/20 transition-all duration-500 group-hover:scale-105 group-hover:bg-white/10">
                   {/* Image Container */}
                   <div className="relative h-48 overflow-hidden">
                     <motion.img
@@ -1086,7 +1086,7 @@ export default function HomePage() {
                   {/* Content */}
                   <div className="p-6">
                     <motion.h3
-                      className="text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"
+                      className="text-2xl font-bold mb-2 text-foreground group-hover:text-[#0f763b] transition-colors"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: item.delay + 0.6 }}
@@ -1105,7 +1105,7 @@ export default function HomePage() {
 
                     <div className="flex items-center justify-between">
                       <motion.div
-                        className="text-3xl font-bold text-primary"
+                        className="text-3xl font-bold text-[#0f763b]"
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ delay: item.delay + 0.8, type: "spring" }}
@@ -1121,7 +1121,7 @@ export default function HomePage() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ delay: item.delay + 0.9 }}
                       >
-                        <Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-primary/80">
+                        <Button size="sm" className="rounded-full bg-gradient-to-r from-[#0f763b] to-[#0f763b]/80">
                           <Heart className="w-4 h-4 mr-2" />
                           Order
                         </Button>
@@ -1130,8 +1130,8 @@ export default function HomePage() {
                   </div>
 
                   {/* Hover Overlay */}
-                  <motion.div
-                    className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    <motion.div
+                      className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0f763b]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     initial={{ scale: 0.8 }}
                     whileHover={{ scale: 1 }}
                   />
@@ -1149,11 +1149,11 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <motion.div
-              className="inline-block p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl border border-primary/20 backdrop-blur-sm"
+              className="inline-block p-8 bg-gradient-to-br from-[#0f763b]/10 to-[#0f763b]/5 rounded-3xl border border-[#0f763b]/20 backdrop-blur-sm"
               whileHover={{ scale: 1.02, y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <h3 className="text-3xl font-bold mb-4 text-primary">Ready to Taste Ethiopia?</h3>
+              <h3 className="text-3xl font-bold mb-4 text-[#0f763b]">Ready to Taste Ethiopia?</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl">
                 Experience the authentic flavors of Ethiopia with our full menu of traditional dishes, 
                 each prepared with love and authentic spices.
@@ -1162,7 +1162,7 @@ export default function HomePage() {
                 <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
                   <Button
                     size="lg"
-                    className="rounded-full bg-gradient-to-r from-primary to-primary/80 shadow-lg"
+                    className="rounded-full bg-gradient-to-r from-[#0f763b] to-[#0f763b]/80 shadow-lg"
                   >
                     <Menu className="w-5 h-5 mr-2" />
                     View Full Menu
@@ -1172,7 +1172,7 @@ export default function HomePage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="rounded-full border-2 hover:bg-primary/10"
+                    className="rounded-full border-2 hover:bg-[#F8931B]/10"
                   >
                     <Phone className="w-5 h-5 mr-2" />
                     Call to Order
@@ -1186,34 +1186,95 @@ export default function HomePage() {
 
       <section
         id="contact"
-        className="py-24 bg-gradient-to-br from-secondary/20 to-background relative overflow-hidden"
+        className="py-32 bg-gradient-to-br from-background via-primary/5 to-secondary/10 relative overflow-hidden"
       >
-        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(15,118,59,0.1)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(248,147,27,0.08)_0%,transparent_50%)]" />
+          
+          {/* Floating Location Icons */}
+          {Array.from({ length: 12 }).map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-[#0f763b]/15"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                fontSize: `${Math.random() * 16 + 16}px`,
+              }}
+              animate={{
+                y: [0, -40, 0],
+                x: [0, Math.random() * 20 - 10, 0],
+                rotate: [0, 180, 360],
+                opacity: [0.1, 0.3, 0.1],
+              }}
+              transition={{
+                duration: Math.random() * 6 + 4,
+                repeat: Number.POSITIVE_INFINITY,
+                delay: Math.random() * 2,
+                ease: "easeInOut",
+              }}
+            >
+              {i % 4 === 0 ? "📍" : i % 4 === 1 ? "🏪" : i % 4 === 2 ? "🚗" : "⏰"}
+            </motion.div>
+          ))}
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Enhanced Section Header */}
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-24"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-primary font-serif text-balance">Visit Us</h2>
             <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-full mx-auto mb-10"
+              className="inline-block mb-8"
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 0.2, type: "spring" }}
+              viewport={{ once: true }}
+            >
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#0f763b] to-[#0f763b]/60 flex items-center justify-center shadow-2xl">
+                <MapPin className="w-12 h-12 text-white" />
+              </div>
+            </motion.div>
+            
+            <motion.h2
+              className="text-6xl md:text-7xl font-bold mb-8 text-[#0f763b] font-serif text-balance"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Visit Us
+            </motion.h2>
+            
+            <motion.div
+              className="w-40 h-1 bg-gradient-to-r from-[#0f763b] via-[#0f763b]/60 to-[#0f763b] rounded-full mx-auto mb-8"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 1.2, delay: 0.6 }}
               viewport={{ once: true }}
             />
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed">
-              We're located in the heart of the city, ready to welcome you with authentic Ethiopian hospitality and
-              unforgettable flavors.
-            </p>
+            
+            <motion.p
+              className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Experience authentic Ethiopian hospitality in the heart of the city. We're ready to welcome you with open arms and unforgettable flavors.
+            </motion.p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-20">
+            {/* Enhanced Contact Information */}
             <motion.div
-              className="space-y-10"
+              className="space-y-8"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
@@ -1224,43 +1285,91 @@ export default function HomePage() {
                   icon: MapPin,
                   title: "Location",
                   content: "123 Cultural Avenue\nDowntown District\nCity, State 12345",
+                  color: "from-blue-500 to-cyan-500",
+                  delay: 0.1,
+                  action: "Get Directions"
                 },
-                { icon: Phone, title: "Phone", content: "(555) 123-4567" },
+                { 
+                  icon: Phone, 
+                  title: "Phone", 
+                  content: "(555) 123-4567",
+                  color: "from-green-500 to-emerald-500",
+                  delay: 0.2,
+                  action: "Call Now"
+                },
                 {
                   icon: Clock,
                   title: "Hours",
-                  content:
-                    "Monday - Thursday: 11:00 AM - 10:00 PM\nFriday - Saturday: 11:00 AM - 11:00 PM\nSunday: 12:00 PM - 9:00 PM",
+                  content: "Monday - Thursday: 11:00 AM - 10:00 PM\nFriday - Saturday: 11:00 AM - 11:00 PM\nSunday: 12:00 PM - 9:00 PM",
+                  color: "from-orange-500 to-red-500",
+                  delay: 0.3,
+                  action: "Check Hours"
                 },
               ].map((item, index) => (
-                <CardSpotlight key={item.title} className="p-8">
                   <motion.div
-                    className="flex items-start space-x-6"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                  key={item.title}
+                  className="group relative"
+                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.8, delay: item.delay }}
                     viewport={{ once: true }}
-                    whileHover={{ x: 10 }}
                   >
+                  <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl shadow-2xl hover:shadow-[#0f763b]/20 transition-all duration-500 group-hover:scale-105 group-hover:bg-white/10">
+                    <div className="flex items-start space-x-6">
                     <motion.div
-                      className="p-3 rounded-full bg-primary/10"
-                      whileHover={{
-                        scale: 1.2,
-                        rotate: 360,
-                        backgroundColor: "rgba(79, 98, 56, 0.2)",
-                      }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <item.icon className="w-6 h-6 text-primary" />
+                        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg`}
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <item.icon className="w-8 h-8 text-white" />
                     </motion.div>
-                    <div>
-                      <h3 className="text-2xl font-semibold mb-3 text-foreground">{item.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed whitespace-pre-line">{item.content}</p>
+                      
+                      <div className="flex-1">
+                        <motion.h3
+                          className="text-2xl font-bold mb-3 text-foreground group-hover:text-[#0f763b] transition-colors"
+                          initial={{ opacity: 0, x: 20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: item.delay + 0.2 }}
+                        >
+                          {item.title}
+                        </motion.h3>
+                        
+                        <motion.p
+                          className="text-muted-foreground leading-relaxed whitespace-pre-line mb-4 group-hover:text-foreground/80 transition-colors"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: item.delay + 0.3 }}
+                        >
+                          {item.content}
+                        </motion.p>
+                        
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: item.delay + 0.4 }}
+                        >
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="rounded-full border-2 hover:bg-[#F8931B]/10"
+                          >
+                            {item.action}
+                          </Button>
+                        </motion.div>
+                      </div>
+                    </div>
+                    
+                    {/* Hover Overlay */}
+                    <motion.div
+                      className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#0f763b]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      initial={{ scale: 0.8 }}
+                      whileHover={{ scale: 1 }}
+                    />
                     </div>
                   </motion.div>
-                </CardSpotlight>
               ))}
 
+              {/* Enhanced Action Buttons */}
               <motion.div
                 className="pt-8"
                 initial={{ opacity: 0, y: 30 }}
@@ -1268,21 +1377,21 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="flex space-x-6">
-                  <motion.div className="flex-1" whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <motion.div whileHover={{ scale: 1.05, y: -5 }} whileTap={{ scale: 0.95 }}>
                     <Button
                       size="lg"
-                      className="w-full rounded-full bg-gradient-to-r from-primary to-primary/80 text-lg py-4"
+                      className="w-full rounded-full bg-gradient-to-r from-[#0f763b] to-[#0f763b]/80 text-lg py-4 shadow-lg"
                     >
                       <Coffee className="w-5 h-5 mr-2" />
                       Make Reservation
                     </Button>
                   </motion.div>
-                  <motion.div className="flex-1" whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}>
+                  <motion.div whileHover={{ scale: 1.05, y: -5 }} whileTap={{ scale: 0.95 }}>
                     <Button
                       size="lg"
                       variant="outline"
-                      className="w-full bg-transparent rounded-full border-2 text-lg py-4"
+                      className="w-full rounded-full border-2 text-lg py-4 hover:bg-[#F8931B]/10"
                     >
                       <Utensils className="w-5 h-5 mr-2" />
                       Order Takeout
@@ -1292,6 +1401,7 @@ export default function HomePage() {
               </motion.div>
             </motion.div>
 
+            {/* Enhanced Image Section */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: 50 }}
@@ -1299,22 +1409,33 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Lens zoomFactor={1.5} lensSize={180}>
+              <div className="relative">
+                {/* Glowing Background */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-[#0f763b]/20 to-[#0f763b]/5 rounded-3xl blur-xl"
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+                />
+                
+                {/* Main Image */}
                 <motion.img
                   src="/warm-ethiopian-restaurant-interior-with-traditiona.jpg"
                   alt="Restaurant interior"
-                  className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
+                  className="relative w-full h-[600px] object-cover rounded-3xl shadow-2xl"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.4 }}
                 />
-              </Lens>
+              </div>
+              
+              {/* Floating Status Badge */}
               <motion.div
-                className="absolute top-6 right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg"
+                className="absolute top-6 right-6 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-2xl"
                 initial={{ opacity: 0, scale: 0, rotate: -10 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 1, type: "spring" }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.1, rotate: 5 }}
                 animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
               >
                 <motion.div className="flex items-center">
                   <motion.div
@@ -1325,13 +1446,69 @@ export default function HomePage() {
                   Now Open!
                 </motion.div>
               </motion.div>
+
+              {/* Floating Info Cards */}
+              <motion.div
+                className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl"
+                initial={{ opacity: 0, scale: 0, rotate: 10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 1.2, type: "spring" }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, rotate: -2 }}
+              >
+                <div className="text-2xl font-bold text-[#0f763b] mb-1">4.9★</div>
+                <div className="text-sm text-muted-foreground">Customer Rating</div>
+              </motion.div>
+
+              <motion.div
+                className="absolute top-1/2 -right-6 bg-gradient-to-br from-[#0f763b] to-[#0f763b]/80 text-white p-6 rounded-2xl shadow-2xl"
+                initial={{ opacity: 0, scale: 0, rotate: -10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 1.4, type: "spring" }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+              >
+                <div className="text-xl font-bold mb-1">Free</div>
+                <div className="text-sm opacity-90">Parking</div>
+              </motion.div>
             </motion.div>
           </div>
+
+          {/* Interactive Map Section */}
+          <motion.div
+            className="mt-24"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="p-8 bg-gradient-to-br from-[#0f763b]/10 to-[#0f763b]/5 rounded-3xl border border-[#0f763b]/20 backdrop-blur-sm"
+              whileHover={{ scale: 1.01, y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-3xl font-bold mb-6 text-[#0f763b] text-center">Find Us on the Map</h3>
+              <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <motion.div
+                    className="text-center"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                  >
+                    <MapPin className="w-16 h-16 text-[#0f763b] mx-auto mb-4" />
+                    <p className="text-lg font-semibold text-foreground">Interactive Map Coming Soon</p>
+                    <p className="text-muted-foreground">123 Cultural Avenue, Downtown District</p>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       <motion.footer
-        className="bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground py-16 relative overflow-hidden"
+        className="bg-gradient-to-br from-[#0f763b] via-[#0f763b]/95 to-[#0f763b]/90 text-white py-16 relative overflow-hidden"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -1420,7 +1597,7 @@ export default function HomePage() {
           </div>
 
           <motion.div
-            className="border-t border-primary-foreground/20 mt-12 pt-8 text-center"
+            className="border-t border-white/20 mt-12 pt-8 text-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
