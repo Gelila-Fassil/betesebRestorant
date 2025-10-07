@@ -622,102 +622,36 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <section id="about" className="py-24 bg-gradient-to-br from-secondary/20 to-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <section id="about" className="py-32 bg-gradient-to-br from-background via-secondary/10 to-background relative overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(79,98,56,0.1)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(79,98,56,0.08)_0%,transparent_50%)]" />
+          {Array.from({ length: 20 }).map((_, i) => (
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-            >
-              <motion.h2
-                className="text-5xl md:text-6xl font-bold mb-8 text-primary font-serif text-balance"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                Our Story
-              </motion.h2>
-              <motion.div
-                className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-full mb-10"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 1, delay: 0.4 }}
-                viewport={{ once: true }}
-              />
-              {[
-                'Beteseb Restaurant was born from a passion to share the authentic flavors of Ethiopia with our community. Our name, meaning "family" in Amharic, reflects our commitment to treating every guest as part of our extended family.',
-                "We source the finest spices directly from Ethiopian markets and prepare each dish using traditional methods passed down through generations. From our signature injera bread to our aromatic coffee ceremony, every element tells the story of Ethiopian culture.",
-                "Join us for an unforgettable culinary journey that celebrates the warmth, community, and incredible flavors of Ethiopia.",
-              ].map((text, index) => (
-                <motion.p
-                  key={index}
-                  className={`text-lg leading-relaxed mb-8 ${index === 2 ? "text-muted-foreground font-medium" : ""} text-pretty`}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 10 }}
-                >
-                  {text}
-                </motion.p>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                viewport={{ once: true }}
-              >
-                <Button size="lg" className="rounded-full bg-gradient-to-r from-primary to-primary/80">
-                  <Users className="w-5 h-5 mr-2" />
-                  Meet Our Team
-                </Button>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <Lens zoomFactor={1.8} lensSize={200}>
-                <motion.img
-                  src="/ethiopian-chef-preparing-traditional-injera-bread-.jpg"
-                  alt="Ethiopian cooking tradition"
-                  className="w-full h-[700px] object-cover rounded-2xl shadow-2xl"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.4 }}
-                />
-              </Lens>
-              <motion.div
-                className="absolute -bottom-8 -right-8 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground p-8 rounded-2xl shadow-2xl backdrop-blur-sm"
-                initial={{ opacity: 0, scale: 0, rotate: -10 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 1.2, type: "spring" }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, rotate: 2 }}
-              >
-                <div className="text-3xl font-bold mb-2">Traditional</div>
-                <div className="text-sm opacity-90">Since 2009</div>
-                <motion.div
-                  className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                />
-              </motion.div>
-            </motion.div>
-          </div>
+              key={i}
+              className="absolute w-1 h-1 bg-primary/20 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0.2, 0.8, 0.2],
+                scale: [1, 1.5, 1],
+              }}
+              transition={{
+                duration: Math.random() * 4 + 3,
+                repeat: Number.POSITIVE_INFINITY,
+                delay: Math.random() * 2,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
         </div>
-      </section>
 
-      <section id="menu" className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background to-secondary/10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Section Header */}
           <motion.div
             className="text-center mb-20"
             initial={{ opacity: 0, y: 50 }}
@@ -725,48 +659,526 @@ export default function HomePage() {
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-primary font-serif text-balance">
-              More Delicious Options
-            </h2>
             <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 rounded-full mx-auto mb-10"
+              className="inline-block mb-6"
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 0.2, type: "spring" }}
+              viewport={{ once: true }}
+            >
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-2xl">
+                <Heart className="w-10 h-10 text-white" />
+              </div>
+            </motion.div>
+            <motion.h2
+              className="text-6xl md:text-7xl font-bold mb-6 text-primary font-serif text-balance"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Our Story
+            </motion.h2>
+            <motion.div
+              className="w-32 h-1 bg-gradient-to-r from-primary via-primary/60 to-primary rounded-full mx-auto mb-8"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 1.2, delay: 0.6 }}
               viewport={{ once: true }}
             />
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto text-pretty leading-relaxed">
-              Explore our extensive collection of traditional Ethiopian dishes, each prepared with authentic spices and
-              time-honored techniques.
-            </p>
+            <motion.p
+              className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              A journey of passion, tradition, and authentic Ethiopian flavors
+            </motion.p>
           </motion.div>
 
+          {/* Interactive Story Cards */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-20">
+            {[
+              {
+                icon: Heart,
+                title: "Family Heritage",
+                description: "Our name 'Beteseb' means 'family' in Amharic, reflecting our commitment to treating every guest as part of our extended family.",
+                color: "from-red-500 to-pink-500",
+                delay: 0.2
+              },
+              {
+                icon: ChefHat,
+                title: "Traditional Methods",
+                description: "We source the finest spices directly from Ethiopian markets and prepare each dish using time-honored techniques passed down through generations.",
+                color: "from-orange-500 to-yellow-500",
+                delay: 0.4
+              },
+              {
+                icon: Coffee,
+                title: "Cultural Experience",
+                description: "From our signature injera bread to our aromatic coffee ceremony, every element tells the story of Ethiopian culture and hospitality.",
+                color: "from-green-500 to-emerald-500",
+                delay: 0.6
+              }
+            ].map((story, index) => (
+              <motion.div
+                key={index}
+                className="group relative"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: story.delay }}
+                viewport={{ once: true }}
+              >
+                <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:bg-white/10">
+                  <motion.div
+                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${story.color} flex items-center justify-center mb-6 shadow-lg`}
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <story.icon className="w-8 h-8 text-white" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                    {story.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors">
+                    {story.description}
+                  </p>
+                  <motion.div
+                    className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1 }}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Main Story Content with Image */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <motion.div
+                className="p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl border border-primary/20 backdrop-blur-sm"
+                whileHover={{ scale: 1.02, y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <h3 className="text-3xl font-bold mb-6 text-primary">A Culinary Journey</h3>
+                <p className="text-lg leading-relaxed text-foreground mb-6">
+                  Beteseb Restaurant was born from a passion to share the authentic flavors of Ethiopia with our community. 
+                  Every dish tells a story of tradition, family, and the rich culinary heritage of Ethiopia.
+                </p>
+                <div className="flex items-center space-x-4">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/60 border-2 border-white shadow-lg" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-muted-foreground">Join 1000+ happy customers</span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="flex space-x-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" className="rounded-full bg-gradient-to-r from-primary to-primary/80 shadow-lg">
+                    <Users className="w-5 h-5 mr-2" />
+                    Meet Our Team
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" variant="outline" className="rounded-full border-2 hover:bg-primary/10">
+                    <Coffee className="w-5 h-5 mr-2" />
+                    Coffee Ceremony
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl blur-xl"
+                  animate={{ scale: [1, 1.05, 1] }}
+                  transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
+                />
+                <motion.img
+                  src="/ethiopian-chef-preparing-traditional-injera-bread-.jpg"
+                  alt="Ethiopian cooking tradition"
+                  className="relative w-full h-[600px] object-cover rounded-3xl shadow-2xl"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.4 }}
+                />
+              </div>
+              
+              {/* Floating Stats Cards */}
+              <motion.div
+                className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl"
+                initial={{ opacity: 0, scale: 0, rotate: -10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 1, type: "spring" }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+              >
+                <div className="text-3xl font-bold text-primary mb-1">2009</div>
+                <div className="text-sm text-muted-foreground">Established</div>
+                <motion.div
+                  className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                />
+              </motion.div>
+
+              <motion.div
+                className="absolute -bottom-6 -left-6 bg-gradient-to-br from-primary to-primary/80 text-white p-6 rounded-2xl shadow-2xl"
+                initial={{ opacity: 0, scale: 0, rotate: 10 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 0.8, delay: 1.2, type: "spring" }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, rotate: -2 }}
+              >
+                <div className="text-2xl font-bold mb-1">Authentic</div>
+                <div className="text-sm opacity-90">Traditional Recipes</div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" className="py-32 relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/10" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(79,98,56,0.1)_0%,transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(79,98,56,0.08)_0%,transparent_50%)]" />
+          
+          {/* Floating Food Icons */}
+          {Array.from({ length: 15 }).map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute text-primary/20"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                fontSize: `${Math.random() * 20 + 20}px`,
+              }}
+              animate={{
+                y: [0, -50, 0],
+                x: [0, Math.random() * 30 - 15, 0],
+                rotate: [0, 360],
+                opacity: [0.1, 0.3, 0.1],
+              }}
+              transition={{
+                duration: Math.random() * 8 + 6,
+                repeat: Number.POSITIVE_INFINITY,
+                delay: Math.random() * 3,
+                ease: "easeInOut",
+              }}
+            >
+              {i % 3 === 0 ? "🍽️" : i % 3 === 1 ? "🌶️" : "☕"}
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Animated Section Header */}
           <motion.div
-            className="mb-16"
+            className="text-center mb-24"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
-            <ExpandableCardDemo />
+            <motion.div
+              className="inline-block mb-8"
+              initial={{ scale: 0, rotate: -180 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 0.2, type: "spring" }}
+              viewport={{ once: true }}
+            >
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-2xl">
+                <Utensils className="w-12 h-12 text-white" />
+              </div>
+            </motion.div>
+            
+            <motion.h2
+              className="text-6xl md:text-7xl font-bold mb-8 text-primary font-serif text-balance"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              Our Menu
+            </motion.h2>
+            
+            <motion.div
+              className="w-40 h-1 bg-gradient-to-r from-primary via-primary/60 to-primary rounded-full mx-auto mb-8"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              transition={{ duration: 1.2, delay: 0.6 }}
+              viewport={{ once: true }}
+            />
+            
+            <motion.p
+              className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              Discover authentic Ethiopian flavors crafted with traditional recipes and the finest ingredients
+            </motion.p>
           </motion.div>
 
+          {/* Interactive Menu Categories */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            viewport={{ once: true }}
+          >
+            {["All", "Main Dishes", "Vegetarian", "Beverages", "Desserts"].map((category, index) => (
+              <motion.button
+                key={category}
+                className="px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-foreground hover:bg-primary hover:text-white transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                {category}
+              </motion.button>
+            ))}
+          </motion.div>
+
+          {/* Animated Menu Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                name: "Doro Wat",
+                description: "Signature chicken stew simmered in berbere spice blend with hard-boiled eggs, served on traditional injera bread",
+                price: "$18",
+                image: "/ethiopian-doro-wat-chicken-stew-with-hard-boiled-e.jpg",
+                rating: 5,
+                category: "Main Dishes",
+                spice: "Hot",
+                delay: 0.1
+              },
+              {
+                name: "Vegetarian Combo",
+                description: "Colorful array of lentil stews, vegetables, and salads showcasing the diversity of Ethiopian vegetarian cuisine",
+                price: "$16",
+                image: "/ethiopian-vegetarian-combination-platter-with-colo.jpg",
+                rating: 5,
+                category: "Vegetarian",
+                spice: "Mild",
+                delay: 0.2
+              },
+              {
+                name: "Kitfo",
+                description: "Ethiopian-style steak tartare seasoned with mitmita spice and clarified butter, served with traditional accompaniments",
+                price: "$22",
+                image: "/ethiopian-kitfo-raw-beef-dish-with-spices-and-side.jpg",
+                rating: 5,
+                category: "Main Dishes",
+                spice: "Medium",
+                delay: 0.3
+              },
+              {
+                name: "Injera Bread",
+                description: "Traditional sourdough flatbread with a unique spongy texture, perfect for sharing and scooping up delicious stews",
+                price: "$8",
+                image: "/traditional-ethiopian-injera-bread-with-colorful-s.jpg",
+                rating: 5,
+                category: "Sides",
+                spice: "None",
+                delay: 0.4
+              },
+              {
+                name: "Coffee Ceremony",
+                description: "Traditional Ethiopian coffee ceremony with freshly roasted beans, incense, and three rounds of service",
+                price: "$12",
+                image: "/ethiopian-coffee-ceremony-with-traditional-cups.jpg",
+                rating: 5,
+                category: "Beverages",
+                spice: "None",
+                delay: 0.5
+              },
+              {
+                name: "Tibs",
+                description: "Sautéed beef or lamb with onions, peppers, and aromatic Ethiopian spices, served with injera bread",
+                price: "$20",
+                image: "/ethiopian-tibs-sauteed-meat-with-vegetables.jpg",
+                rating: 5,
+                category: "Main Dishes",
+                spice: "Medium",
+                delay: 0.6
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="group relative"
+                initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.8, delay: item.delay }}
+                viewport={{ once: true }}
+              >
+                <div className="relative overflow-hidden rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 shadow-2xl hover:shadow-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:bg-white/10">
+                  {/* Image Container */}
+                  <div className="relative h-48 overflow-hidden">
+                    <motion.img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.6 }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    
+                    {/* Floating Elements */}
+                    <motion.div
+                      className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full px-3 py-1 text-white text-sm font-semibold"
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: item.delay + 0.3 }}
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      {item.spice}
+                    </motion.div>
+                    
+                    <motion.div
+                      className="absolute top-4 left-4 flex items-center space-x-1"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: item.delay + 0.4 }}
+                    >
+                      {[...Array(item.rating)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          initial={{ scale: 0, rotate: -180 }}
+                          animate={{ scale: 1, rotate: 0 }}
+                          transition={{ delay: item.delay + 0.5 + i * 0.1, type: "spring" }}
+                        >
+                          <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <motion.h3
+                      className="text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: item.delay + 0.6 }}
+                    >
+                      {item.name}
+                    </motion.h3>
+                    
+                    <motion.p
+                      className="text-muted-foreground mb-4 leading-relaxed group-hover:text-foreground/80 transition-colors"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: item.delay + 0.7 }}
+                    >
+                      {item.description}
+                    </motion.p>
+
+                    <div className="flex items-center justify-between">
+                      <motion.div
+                        className="text-3xl font-bold text-primary"
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: item.delay + 0.8, type: "spring" }}
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        {item.price}
+                      </motion.div>
+                      
+                      <motion.div
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: item.delay + 0.9 }}
+                      >
+                        <Button size="sm" className="rounded-full bg-gradient-to-r from-primary to-primary/80">
+                          <Heart className="w-4 h-4 mr-2" />
+                          Order
+                        </Button>
+                      </motion.div>
+                    </div>
+                  </div>
+
+                  {/* Hover Overlay */}
+                  <motion.div
+                    className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    initial={{ scale: 0.8 }}
+                    whileHover={{ scale: 1 }}
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Animated CTA Section */}
           <motion.div
             className="text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 1, delay: 1.2 }}
             viewport={{ once: true }}
           >
-            <motion.div whileHover={{ scale: 1.05, y: -5 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-10 py-4 bg-transparent rounded-full border-2 hover:bg-primary hover:text-primary-foreground"
-              >
-                <Menu className="w-5 h-5 mr-2" />
-                View Full Menu
-              </Button>
+            <motion.div
+              className="inline-block p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl border border-primary/20 backdrop-blur-sm"
+              whileHover={{ scale: 1.02, y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h3 className="text-3xl font-bold mb-4 text-primary">Ready to Taste Ethiopia?</h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl">
+                Experience the authentic flavors of Ethiopia with our full menu of traditional dishes, 
+                each prepared with love and authentic spices.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    size="lg"
+                    className="rounded-full bg-gradient-to-r from-primary to-primary/80 shadow-lg"
+                  >
+                    <Menu className="w-5 h-5 mr-2" />
+                    View Full Menu
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full border-2 hover:bg-primary/10"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    Call to Order
+                  </Button>
+                </motion.div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
